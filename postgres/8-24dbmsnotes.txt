@@ -1,0 +1,18 @@
+DDL:
+create table employee(empno int not null,empname varchar(100),designation varchar(50),salary int,department varchar(100));
+alter table employee rename to emp;
+drop table emp;
+truncate table emp;
+DML:
+alter table emp add column rating int;
+alter table emp drop column rating int;
+alter table emp rename column   empno to  empid ;
+alter table emp alter column empname type char(50) ;
+insert into emp values(1,'anand','manager',50000,'management');
+insert into emp values(2,'kumar','tester',20000,'testing');
+insert into emp values(2,'bala','developer',40000,'development');
+insert into emp values(2,'ram','support',20000,'maintenance');update emp set empid=3 where empname='bala';
+update emp set empid=4 where empname='ram';
+delete from emp where empid=4;
+
+

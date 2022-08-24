@@ -1,0 +1,16 @@
+JOIN
+
+1)cross join :
+matches every row of the first table with every row of the second table
+If the input tables have x and y columns, respectively, the resulting table will have x+y columns
+ex:SELECT EMP_ID, NAME, DEPT FROM COMPANY CROSS JOIN DEPARTMENT;
+
+2)Inner join:
+A INNER JOIN creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate(condition)
+When the join-predicate is satisfied, column values for each matched pair of rows of table1 and table2 are combined into a result row.
+
+3)left outer join:
+first a innser joint is performed
+Then, for each row in table T1 that does not satisfy the join condition with any row in table T2, a joined row is added with null values in columns of T2. 
+Thus, the joined table always has at least one row for each row in T1.
+
