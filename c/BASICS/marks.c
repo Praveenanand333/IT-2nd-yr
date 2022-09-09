@@ -17,14 +17,14 @@ display(sum,average);
 
 
 void getmarks(){
-int i;
+int i,markcredit[5];
 int arr1[5],totcredit=18;
-int creditary={4,3,4,3,4};
+int creditarr={4,3,4,3,4};
 int subname={"english","BEEE","maths","it essentials","c"};
 for(i=0;i<5;i++){
 printf("enter the marks of subject %s",subname[i]);
 scanf("%d",&arr1[i]);
-
+markredit[i]=creditarr[]
 }
 calculate(arr1);
 }
