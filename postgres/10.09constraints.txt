@@ -1,0 +1,32 @@
+create table student(name varchar(50) not null unique,rollno int,age int,department varchar(50) DEFAULT 'Information technology',CHECK(age<25));
+
+create table student1(name varchar(50) ,rollno int,age int,department varchar(50) DEFAULT 'Information technology',CHECK(age<25),primary key(name));
+
+create table persons (personid int,name varchar(50),age int,primary KEY(personid));
+
+CREATE TABLE Orders (
+    Orderid int NOT NULL,
+    Ordernumber int NOT NULL,
+    Personid int,
+    PRIMARY KEY (Orderid),
+    FOREIGN KEY (Personid) REFERENCES Persons(Personid)
+);
+
+
+
+insert into persons values(1000,'anand',25);
+insert into persons values(1001,'sam',35);
+insert into persons values(1002,'ram',29);
+insert into persons values(1003,'kumar',22);
+
+
+
+insert into orders values(1,170,1001);
+insert into orders values(2,230,1001);
+insert into orders values(3,200,1002);
+insert into orders values(4,109,1003);
+
+insert into student values('anand',1001,22);
+insert into student values('sam',1002,22);
+insert into student values('ram',1003,19);
+insert into student values('bala',1004,18);
