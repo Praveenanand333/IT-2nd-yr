@@ -5,7 +5,7 @@ matches every row of the first table with every row of the second table
 If the input tables have x and y columns, respectively, the resulting table will have x+y columns
 ex:SELECT EMP_ID, NAME, DEPT FROM COMPANY CROSS JOIN DEPARTMENT;
 
-2)Inner join:
+2)Inner join:(equi join)
 A INNER JOIN creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate(condition)
 When the join-predicate is satisfied, column values for each matched pair of rows of table1 and table2 are combined into a result row.
 
