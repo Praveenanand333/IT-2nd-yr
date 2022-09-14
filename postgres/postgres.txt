@@ -14,3 +14,6 @@ first a innser joint is performed
 Then, for each row in table T1 that does not satisfy the join condition with any row in table T2, a joined row is added with null values in columns of T2. 
 Thus, the joined table always has at least one row for each row in T1.
 
+6)natural join
+ difference between INNER JOIN and NATURAL JOIN is the number of columns returned.
+ it omits duplicate coulmns
