@@ -1,0 +1,5 @@
+"id","name","age","salary","joindate","id-2","dept","empid"
+1,"anand",30,50000,"2020-09-14",1,"management                                        ",1
+2,"sam",29,40000,"2020-08-15",2,"development                                       ",2
+3,"ram",26,30000,"2021-09-02",3,"maintenance                                       ",7
+4,"bala",25,20000,"2021-12-09",4,"testing                                           ",3
