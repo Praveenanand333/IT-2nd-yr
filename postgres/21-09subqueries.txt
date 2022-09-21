@@ -1,0 +1,17 @@
+create table student(name varchar(50) not null unique,rollno int,age int,department varchar(50) DEFAULT 'Information technology',CHECK(age<25));
+
+insert into student values('anand',1001,22);
+insert into student values('sam',1002,22);
+insert into student values('ram',1003,19);
+insert into student values('bala',1004,18);
+insert into student values('krishna',1005,21,'computer science');
+insert into student values('vel',1006,23,'computer science');
+insert into student values ('kumar',1007,20,'mechanical engineering');
+insert into student values ('raj',1008,23,'civil engineering');
+
+
+select * from student where rollno in(select rollno from student where age<22);
+select * from student where age>any(select age from student where rollno>1004);
+select * from student where age<all(select age from student where rollno>1004);
+select * from student where rollno>1004 and  exists(select * from student where age=20);
+select * from student where rollno>1005 and  not exists(select * from student where age=28);
