@@ -1,0 +1,49 @@
+create function disp1() 
+returns int
+language plpgsql
+as
+$$
+declare count_emp INTEGER;
+begin 
+select count(*) into count_emp from department;
+return count_emp;
+end;
+$$;
+select disp1();
+
+create FUNCTION disp()  
+returns char(20)
+language plpgsql
+as 
+$$
+begin
+return 'hello';
+END;
+$$;
+select disp();
+
+create function add( a int,b int) 
+returns int
+language plpgsql
+as 
+$$
+BEGIN
+return a+b;
+end;
+$$;
+select add(5,6)
+
+
+
+create function company_1(a int,b int) 
+returns int
+language plpgsql
+as 
+$$
+DECLARE salary_count integer;
+begin
+select count(*) from company into salary_count where salary between a and b;
+return salary_count;
+end;
+$$;
+select company_1(20000,30000);
