@@ -1,3 +1,3 @@
-sprintf:
+sprintf: hello
     converts int to string
     syntax:sprintf(string,"%d",number) // stores the string value of number in string variable
