@@ -1,0 +1,4 @@
+create table friends(id int not null unique,name varchar(50),department varchar(40));
+insert into friends values(1,'anand','it'),(2,'sam','cs');
+insert into friends values(3,'ram','it'),(4,'bala','mech');
+insert into friends values(5,'kumar','civil'),(6,'raj','eee');
