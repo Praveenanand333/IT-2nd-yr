@@ -1,0 +1,48 @@
+ CREATE OR REPLACE PROCEDURE display_message (msg TEXT)
+ AS $$
+ BEGIN
+ RAISE NOTICE 'Procedure Parameter: %', msg ;
+ END ;
+ $$
+ LANGUAGE plpgsql ;
+call display_message('hello');
+ --DROP PROCEDURE display_message(text);
+ 
+ 
+ CREATE OR REPLACE PROCEDURE update_dept ( id1 int)
+ AS $$
+ BEGIN
+update department set dept='creating' where id=id1;
+ END ;
+ $$
+ LANGUAGE plpgsql ;
+call update_dept(2);
+select * from department;
+
+create or replace procedure insert_dept(id1 int,dept1 char(50),empid1 int)
+as $$
+BEGIN
+insert into department values(id1,dept1,empid1);
+end;
+$$
+language plpgsql;
+call insert_dept(5,'support',8);
+SELECT * from department;
+
+
+
+select * from student;
+
+CREATE TYPE record1 AS (f1 varchar(10), f2 varchar(10) );
+
+
+create or replace procedure student_traverse() language plpgsql as $$
+declare rec record;
+BEGIN
+for rec in (select * from student)
+loop
+raise notice '% % % %',rec.name,rec.rollno,rec.age,rec.department;
+end loop;
+end;
+$$;
+call student_traverse();
