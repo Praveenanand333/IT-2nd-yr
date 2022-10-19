@@ -3,7 +3,7 @@ returns int
 language plpgsql
 as
 $$
-declare count_emp INTEGER;
+declare count_emp INTEGER; '
 begin 
 select count(*) into count_emp from department;
 return count_emp;
@@ -47,3 +47,18 @@ return salary_count;
 end;
 $$;
 select company_1(20000,30000);
+
+
+
+
+create or replace FUNCTION insert_dept1(id1 int,dept1 char(50),empid1 int)
+returns int
+as $$
+BEGIN
+insert into department values(id1,dept1,empid1);
+return 0;
+end;
+$$
+language plpgsql;
+select insert_dept1(6,'support2',9);
+SELECT * from department;
