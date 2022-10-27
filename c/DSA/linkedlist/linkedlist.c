@@ -1,17 +1,35 @@
 #include<stdio.h>
-#include<conio.h>
+#include<stdlib.h>
 struct Node
 {
     int data;
-    struct Node* next;//next is the pointer that points to the struct Node
+    struct Node* next;
     
 };
+
 struct Node* head;
 void InsertAtBeginning(int x){
     struct Node* temp= malloc(sizeof(struct Node));
     temp->data=x;
     temp->next=head;
     head=temp;
+}
+
+
+void InsertAtEnd(int x){
+struct Node* temp= malloc(sizeof(struct Node));
+ struct Node* temp1 = head;
+    temp->data=x;
+    temp->next=NULL;
+    if(head==NULL){
+head=temp;
+return;
+ }
+    while (temp1->next!=NULL)
+    {
+        temp1=temp1->next;
+    }
+    temp1->next=temp;
 }
 void Print(){
     struct Node* temp = head;
@@ -24,13 +42,18 @@ void Print(){
     printf("\n");
 }
 int main(){
-    head=NULL;//making an empty list
+    int a;
+    head=NULL;
     printf("How many numbers do you want to insert ?\n");
     int n,i,x;
     scanf("%d",&n);
     for(i=0;i<n;i++){
         printf("Enter the number \n");
         scanf("%d",&x);
-    InsertAtBeginning(x);
-    Print();}
+    InsertAtEnd(x);
+    }
+    printf("\nEnter the number thst you want to insert at the beginning:");
+    scanf("%d",&a);
+    InsertAtBeginning(a);
+    Print();
 }
