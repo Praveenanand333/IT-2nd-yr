@@ -1,0 +1,134 @@
+-- create table supervisor(
+-- Id int not null unique,
+-- Name varchar(30)
+-- );
+-- create table Department(
+-- Dept_No int not null unique,
+-- Dept_Name varchar(30)
+-- );
+-- create table Projects(
+-- Project_code int not null unique,
+-- Project_Name varchar(30)
+-- );
+-- create table Employee(
+-- Emp_no int not null unique,
+-- Emp_Name varchar(30),
+-- Gender varchar(10),
+-- Designation varchar(30),
+-- PAN_NO varchar(30) not null unique,
+-- DOB date,
+-- Date_of_joining date,
+-- Basic_pay int,
+-- Skill varchar(100)
+-- );
+-- create table rt_de(
+-- Dept_no int,
+-- Emp_no int,
+-- Primary key(Emp_no),
+-- constraint fk_emp
+-- foreign key(Emp_no)
+-- references employee(Emp_no),
+-- constraint fk_dep
+-- foreign key(Dept_no)
+-- references department(Dept_no)
+-- );
+-- create table rt_ds(
+-- Dept_no int,
+-- Id int,
+-- Primary key(Dept_no),
+-- constraint fk_dep
+-- foreign key(Dept_no)
+-- references department(Dept_no),
+-- constraint fk_sup
+-- foreign key(ID)
+-- references Supervisor(ID)
+-- );
+
+-- create table supervise(
+-- Emp_no int,
+-- ID int,
+-- Primary key(Emp_no),
+-- constraint fk_emp
+-- foreign key(Emp_no)
+-- references employee(Emp_no),
+-- constraint fk_sup
+-- foreign key(ID)
+-- references Supervisor(ID)
+-- );
+-- create table worktime(
+-- Project_code int,
+-- Emp_no int,
+-- Intime time,
+-- Outtime time,
+-- primary key(Project_code),
+-- constraint fk_pro
+-- foreign key(Project_code)
+-- references projects(Project_code),
+-- constraint fk_wrk
+-- foreign key(Emp_no)
+-- references employee(Emp_no)
+-- );
+-- create table rt_dp(
+-- Dept_no int,
+-- Project_code int,
+-- primary key(Project_code),
+-- constraint fk_dep
+-- foreign key(Dept_no)
+-- references department(Dept_no),
+-- constraint fk_pro
+-- foreign key(Project_code)
+-- references projects(Project_code)
+-- );
+-- insert into department
+-- values(101,'HR'),(102,'Design'),(103,'Package'),(104,'Networking'),(105,'Production'),(106,'S
+-- ecurity'),(108,'Coding');
+-- select * from department;
+-- insert into employee values(1,'Ratish','Male','Developer','QWERT1234Y','1999-05-03','2021-04-05',65000,'Vibing'),(2,'Karthikeyan','Male','HR','ERTYU3456V','2000-03-02','2022-06-05',75000,'Creativity'),
+-- (3,'Thirumurugan','Male','Design','ERERT4546V','2000-01-02','2020-04-23',55000,'Creativity'),
+-- (4,'Arun','Male','Cyber','RTGFT6746V','2001-02-04','2021-06-21',75000,'content_CREATOR'),
+-- (5,'Ajay','Male','Coding','RQWCT6746V','2001-05-04','2021-06-22',85000,'Entertainer'),
+-- (6,'Navas','Male','Coding','QWECT4567E','2001-04-21','2021-09-21',78000,'Creativity'),
+-- (7,'Kabileshwaran','Male','Coding','ZXCVB4567E','2000-05-22','2021-10-22',85000,'supervisor');
+--  select * from employee;
+-- insert into projects values(501,'Cloud
+-- Computing'),(502,'Criminology'),(503,'DBMS'),(504,'AI'),(505,'Robotics'),(506,'Drone');
+-- select * from projects;
+-- insert into supervisor values(1001,'Arun'),(1002,'Navas'),(1003,'Kabileshwaran'),(1004,'Ajay');
+-- select * from supervisor;
+-- insert into rt_de values(102,1),(102,3),(108,7),(101,2);
+-- select * from rt_de;
+-- insert into rt_ds values(101,1001),(102,1002),(103,1003),(104,1003);
+-- select * from rt_ds;
+-- insert into worktime values(501,1,'9:15','10:15'),(503,2,'10:15','12:00');
+-- select * from worktime;
+-- insert into rt_dp values(106,501),(108,502),(106,503);
+-- select * from rt_dp;
+-- insert into supervise values(1,1001),(2,1001),(3,1002),(4,1002),(5,1003),(6,1004),(7,1004);
+-- select * from supervise;
+-- insert into projects values(507,'UI');
+-- select * from projects;
+-- update employee set basic_pay=85000 where emp_name='Ajay'; 
+-- Select * from employee;
+-- delete from projects where project_code=507; 
+-- Select * from projects;
+-- alter table supervisor add column address varchar(30); 
+-- Select * from supervisor;
+-- alter table supervisor drop column address; 
+-- Select * from Supervisor;
+-- select COUNT(*) from employee where gender='Male';
+-- select emp_name from employee where basic_pay between 70000 and 100000;
+-- select UPPER(emp_name) from employee;
+-- select emp_name from employee where extract(year from age(current_date,DOB))=23;
+-- select emp_name from employee where designation='HR';
+-- select substring(emp_name,1,4) as name from employee;
+-- select dept_name from department where dept_no in (select dept_no from rt_dp);
+-- select emp_name from employee where emp_no in(select emp_no from supervise where id=(select id from supervisor where name='Arun'));
+-- select emp_name from employee where gender='Female';
+-- select emp_name from employee where emp_name like 'K%';
+-- create table newtable as select * from supervisor;
+-- select * from newtable;
+-- select emp_name from employee where basic_pay=(select MAX(basic_pay) from employee);
+-- select CONCAT(emp_name,' ',basic_pay) as Name_with_Salary from employee;
+-- select emp_name,extract(year from age(current_date,DOB))*12 + extract(month from age(current_date,DOB)) as age_in_month from employee;
+-- truncate table newtable; 
+
