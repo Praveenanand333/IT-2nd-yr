@@ -13,3 +13,17 @@ return;
 end;
 $$
 select * from temp1;
+create or replace function temp2()
+returns setof op
+language plpgsql
+as $$
+declare result op;
+begin
+for result in select case when right(empname,1)='m' then rtrim(empname,'m') else empname end as empname,empid,salary,designation from employee 
+loop
+return next result;
+end loop;
+return;
+end;
+$$
+select * from temp2();
