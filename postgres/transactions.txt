@@ -2,3 +2,14 @@ create table friends(id int not null unique,name varchar(50),department varchar(
 insert into friends values(1,'anand','it'),(2,'sam','cs');
 insert into friends values(3,'ram','it'),(4,'bala','mech');
 insert into friends values(5,'kumar','civil'),(6,'raj','eee');
+begin transaction;
+insert into friends values(7,'sample','ece');
+select * from friends;
+savepoint s1;
+delete from friends where id=7;
+select * from friends;
+rollback to s1;
+select * from friends;
+end transaction;
+
+
