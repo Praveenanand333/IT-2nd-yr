@@ -12,6 +12,7 @@ CREATE or replace FUNCTION trigger_function()
    LANGUAGE PLPGSQL
 AS $$
 BEGIN
+ raise  notice 'new value inserted';
    update student set total =s1 +s2 +s3,percentage = ((s1+S2+S3) /3);
    return new;
 END;
