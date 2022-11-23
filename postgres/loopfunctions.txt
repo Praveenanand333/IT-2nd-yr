@@ -27,3 +27,32 @@ return;
 end;
 $$
 select * from temp2();
+create type op1 as (id varchar(100),salary int,designation varchar(40));
+create or replace function temp3()
+returns setof op1
+language plpgsql
+as $$
+decalre result op1;
+begin
+for result in select concat(emoname,empid) as id,salary,initcap(designation) as designation from employee
+loop
+return next result;
+end loop;
+return;
+end;
+$$
+select * from temp3();
+create or replace function temp4()
+returns setof op
+language plpgsql
+as $$
+decalre result op;
+begin
+for result in select case when empname='anand' then empname=concat(empname,'333') else empname end as empname,empid,salary,designation from employee
+loop
+return next result;
+end loop;
+return;
+end;
+$$
+select * from temp4();
