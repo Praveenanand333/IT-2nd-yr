@@ -1,0 +1,14 @@
+online examination system
+abstract and agile
+4 sprints(each sprint should have req. for next sprint)
+0.initial sprint for overall requirement analysis
+1.login page
+2.creating exam
+3.writing exam
+4.view and records
+use case
+class diagram
+https://www.slideshare.net/SARASWATENDRASINGH/online-examination-system-project-report
+https://d3i71xaburhd42.cloudfront.net/b4db73d377dc65c39884bf0b0fd2760810508072/3-Figure3-1.png
+https://itsourcecode.com/wp-content/uploads/2021/12/UML-Class-Diagram-for-Online-Examination-System.png
+
