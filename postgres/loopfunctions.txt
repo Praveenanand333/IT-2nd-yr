@@ -1,3 +1,17 @@
+create or replace function temp()
+returns setof char(40)
+language plpgsql
+as $$
+declare name char(40)
+begin
+for name in select empname from employee 
+loop
+return next name;
+end loop;
+return;
+end;
+$$
+select temp();
 create type op as (empname varchar(50),empid varchar(10),salary int,designation varchar(40));
 create or replace function temp1()
 returns setof op;
