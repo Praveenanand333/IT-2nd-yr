@@ -1,0 +1,15 @@
+create type op as (empname varchar(50),empid varchar(10),salary int,designation varchar(40));
+create or replace function temp1()
+returns setof op;
+language plpgsql
+as $$
+decalre result op;
+begin
+for result in select * from employee where salary >45000
+loop
+return next result;
+end loop;
+return;
+end;
+$$
+select * from temp1;
