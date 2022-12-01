@@ -19,21 +19,18 @@ if(root==NULL){
 else if(data<=root->data){
     root->left=Insert(root->left,data);
 }
+
 else{
     root->right=Insert(root->right,data);
 }
  return root;
 }
-int Min(struct Bstnode* root){
-    if(root==NULL){
-        printf("error empty tree\n");
-        return -1;
-    }
+struct Bstnode* Min(struct Bstnode* root){
     struct Bstnode* current=root;
     while(current->left!=NULL){
         current=current->left;
     }
-    return current->data;
+    return current;
 }
 struct Bstnode* Delete(struct Bstnode* root,int data){
 if(root==NULL) return ;
@@ -55,11 +52,13 @@ else if(root->right==NULL){
     root=root->left;
     free(temp);
 }
+//case -3 two child 
 else{
-    struct Bstnode* temp=root;
+    struct Bstnode* temp=Min(root->right);
     root->data=temp->data;
     root->right=Delete(root->right,temp->data);
 }
+//or we can find max of left sib tree and copy it then delete the duplicate node
 }
 return root;
 }
