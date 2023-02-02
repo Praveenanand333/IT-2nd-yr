@@ -6,7 +6,12 @@ public:
 int acc_bal;
 
 account(int amount){
-acc_bal=amount;
+if(amount>0){
+acc_bal=amount;}
+else{
+cout<<"\n Cant have balance as negative value";
+acc_bal=0;
+}
 }
 
 
@@ -46,4 +51,3 @@ cin>>am;
 bal=a1.debit(am);
 cout<<"\nThe updated balance is:"<<bal;
 }
-
