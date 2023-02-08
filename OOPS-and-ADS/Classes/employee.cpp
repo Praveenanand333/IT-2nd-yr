@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-class employee{\
+class employee{
 
 public:
 string fname;
@@ -19,11 +19,11 @@ cout<<"\nThe fname of employee is :"<<fname;
 }
 
 int get_lname(){
-cout<<"\n The lname of the employee is:"<<lname;
+cout<<"\nThe lname of the employee is:"<<lname;
 }
 
 int get_sal(){
-cout<<"\n The salary of the employee is :"<<mon_sal;
+cout<<"\nThe salary of the employee is :"<<mon_sal;
 }
 
 int set_fname(string name){
@@ -37,47 +37,54 @@ lname=name;
 int set_sal(int sal){
 mon_sal=sal;
 }
+int hike(){
+    mon_sal*=1.1;
+}
 };
 
 int main(){
 employee e1("anand","kumar",10000);
-int choice=0,sal;
+int choice,sal;
 string name;
-e1.get_fname();
-e1.get_lname();
-e1.get_sal();
-
-
-cout<<"\n Do you want to change the fname? 1/0:";
+cout<<"\nEnter the choice \n1-Get fname \n2-Get lname \n3-Get salary \n4-Set fname \n5-Set lname\n6-Set salary\n7-Make hike in salary\n 8-Exit\n";
 cin>>choice;
-if(choice==1){
-cout<<"\nEnter the new fname of employee:";
-cin>>name;
-e1.set_fname(name);
-e1.get_fname();
-choice=0;
-}
-
-
-cout<<"\n Do you want to change the lname? 1/0:";
-cin>>choice;
-if(choice==1){
-cout<<"\nEnter the new fname of employee:";
-cin>>name;
-e1.set_lname(name);
-e1.get_lname();
-choice=0;
-}
-
-
-cout<<"\n Do you want to change the monthly salary? 1/0";
-cin>>choice;
-if(choice==1){
-cout<<"\nEnter the new salary of employee:";
-cin>>sal;
-e1.set_sal(sal);
-e1.get_sal();
-choice=0;
+while(choice!=8){
+    switch (choice)
+    {
+    case 1:
+    e1.get_fname();
+    break;
+    case 2:
+    e1.get_lname();
+    break;
+    case 3:
+    e1.get_sal();
+    break;
+    case 4:
+    cout<<"\nEnter the new fname of employee:";
+    cin>>name;
+    e1.set_fname(name);
+    e1.get_fname();
+    break;
+    case 5:
+    cout<<"\nEnter the new fname of employee:";
+    cin>>name;
+    e1.set_lname(name);
+    e1.get_lname();
+    break;
+    case 6:
+    cout<<"\nEnter the new salary of employee:";
+    cin>>sal;
+    e1.set_sal(sal);
+    e1.get_sal();
+    case 7:
+    e1.hike();
+    e1.get_sal();
+    default:
+        break;
+    }
+    cout<<"\nEnter the choice \n1-Get fname \n2-Get lname \n3-Get salary \n4-Set fname \n5-Set lname\n6-Set salary\n7-Make hike in salary\n8-Exit\n";
+    cin>>choice;
 }
 
 }
