@@ -20,8 +20,10 @@ val[1]=`expr 2 + 5`
 val[2]=`expr 2 - 5`
 val[3]=`expr 2 / 5`
 echo "Total value : ${val[*]}"
-a=10
-b=5
+echo "enter a:"
+read a
+echo "enter b:"
+read b
 
 if [ $a == $b ]
 then
