@@ -14,11 +14,7 @@ for(int i=0;i<n;i++){
 a3=a1+a2;
 cout<<a3<<"\n";
 a1=a2;
-a2=a3;
-}
-}
-
-
+a2=a3;}}
 };
 
 int main(){
