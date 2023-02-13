@@ -8,48 +8,18 @@ int price;
 int year;
 
 public:
-void set_id(int id1){
-id=id1;
-}
-
-void set_authorname(string authorname1){
-authorname=authorname1;
-}
-
+void set_id(int id1){id=id1;}
+void set_authorname(string authorname1){authorname=authorname1;}
 void set_publishername(string publishername1){
-publishername=publishername1;
-}
+publishername=publishername1;}
+void set_price(int price1){price=price1;}
+void set_year(int year1){year=year1;}
 
-void set_price(int price1){
-price=price1;
-}
-
-void set_year(int year1){
-year=year1;
-}
-
-
-int get_id(){
-return id;
-}
-
-string get_authorname(){
-return authorname;
-}
-
-string get_publishername(){
-return publishername;
-}
-
-int get_price(){
-return price;
-}
-
-int get_year(){
-return year;
-}
-
-
+int get_id(){return id;}
+string get_authorname(){return authorname;}
+string get_publishername(){return publishername;}
+int get_price(){return price;}
+int get_year(){return year;}
 };
 
 int main(){
