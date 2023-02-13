@@ -6,19 +6,13 @@ int inches;
 
 
 public:
-void set_feet(int feet1){
-feet=feet1;
-}
-
-void set_inches(int inches1){
-inches=inches1;
-}
+void set_feet(int feet1){feet=feet1;}
+void set_inches(int inches1){inches=inches1;}
 
 void sum(Distance d1){
 cout<<"Sum of feet is:"<<feet+d1.feet<<"\n";
-cout<<"Sum of incehs is:"<<inches+d1.inches<<"\n";
+cout<<"Sum of inches is:"<<inches+d1.inches<<"\n";
 }
-
 };
 
 int main(){
