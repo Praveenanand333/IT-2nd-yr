@@ -1,11 +1,27 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int main(){
-string str="ABCD";
-int n=str.length();
-for(int i=0;i<n;i++){
-for(int j=i;j<=n;j++){
-	cout<<str.substr(i,j)<<endl;
+void subString(char str[], int n)
+{
+	// Pick starting point
+	for (int len = 1; len <= n; len++)
+	{	
+		// Pick ending point
+		for (int i = 0; i <= n - len; i++)
+		{
+			// Print characters from current
+			// starting point to current ending
+			// point.
+			int j = i + len - 1;			
+			for (int k = i; k <= j; k++)
+				cout << str[k];
+			
+			cout << endl;
+		}
+	}
 }
-}
+int main()
+{
+	char str[] = "abcd";
+	subString(str, strlen(str));
+	return 0;
 }
