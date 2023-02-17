@@ -20,3 +20,7 @@ echo "reverse printing $i:"
 i=`expr $i - 1`
 done
 
+for((ctr=0;ctr<11;ctr++))
+do
+echo $ctr
+done
