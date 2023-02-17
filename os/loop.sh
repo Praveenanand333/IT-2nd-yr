@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/usr/env bash
 a=0
+
+learn="Start learning from Javatpoint."
 
 while [ $a -lt 10 ]
 do
@@ -23,4 +25,24 @@ done
 for((ctr=0;ctr<11;ctr++))
 do
 echo $ctr
+done 
+
+for var in "this is from for loop"
+do
+echo $var
+done
+
+for num in {1..5}
+do
+echo $num
+done
+
+for num in {1..10..2}
+do
+echo $num
+done
+
+for num in {10..1..-2}
+do
+echo $num
 done
