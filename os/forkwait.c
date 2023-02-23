@@ -44,5 +44,4 @@ If fork returns a positive value, we are in the parent process, so we print some
 We then use the WIFEXITED macro to check whether the child process exited normally, and print the exit status using WEXITSTATUS if it did. If the child process did not exit normally, we print a message indicating this.
 
 Finally, we print a message indicating that we are exiting the parent process, and call exit to exit the program.
-
-I hope this program helps you understand the exit system call and how it can be used in C programs. Let me know if you have any questions!*/
+*/
