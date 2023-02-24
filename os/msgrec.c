@@ -11,7 +11,7 @@ int main() {
    int msg_id;
    my_key = ftok("progfile", 65); //create unique key
    msg_id = msgget(my_key, 0666 | IPC_CREAT); //create message queue and return id
-   msgrcv(msg_id, &message, sizeof(message), 1, 0); //used to receive message
+   msgrcv(msg_id, &message, sizeof(message), 1, 0); //used to receive message; 1 is  msgtype 0 is msgflag
    // display the message
    printf("Received Message is : %s \n", message.msg);
    msgctl(msg_id, IPC_RMID, NULL); //destroy the message queue
