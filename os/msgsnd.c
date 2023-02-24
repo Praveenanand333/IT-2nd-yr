@@ -13,7 +13,7 @@ void main() {
    msg_id = msgget(my_key, 0666 | IPC_CREAT); //create message queue and return id
    message.msg_type = 1;
    printf("Write Message : ");
-   fgets(message.msg, 100, stdin);
-   msgsnd(msg_id, &message, sizeof(message), 0); //send message
+   fgets(message.msg, 100, stdin);//100 is msg size
+   msgsnd(msg_id, &message, sizeof(message), 0); //send message; 0 is the msgflag
    printf("Sent message is : %s \n", message.msg);
 }
