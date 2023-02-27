@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 void func(int a,int b,int c){
-cout<<"This is from function accepting 3 parameters"<<endl;
+cout<<"This is from function accepting 3 parameters:"<<endl;
 cout<<"The sum of three numbers is:"<<a+b+c<<endl;
 }
 void func(int a,int b){
