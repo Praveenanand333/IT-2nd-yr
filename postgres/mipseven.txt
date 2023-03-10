@@ -1,0 +1,24 @@
+# initialize registers
+    .data
+array:  .word 1, 2, 3, 4, 5       # array of 5 numbers
+size:   .word 5                   # size of array
+    .text
+    .globl main
+main:
+    lw $t0, size                # load size of array
+    addi $t1, $zero, 0          # initialize loop counter to 0
+loop:
+    beq $t1, $t0, done          # if loop counter = size of array, exit loop
+    lw $t2, array($t1)          # load next number in array into $t2
+    div $t2, $t2, 2             # divide number by 2
+    mfhi $t3                    # move remainder (0 for even, 1 for odd) to $t3
+    bne $t3, $zero, skip        # if number is odd, skip to next iteration
+    li $v0, 1                   # load print integer system call number
+    move $a0, $t2               # move number to be printed into argument register
+    syscall                     # print number
+skip:
+    addi $t1, $t1, 4            # increment loop counter by 4 (word size)
+    j loop                      # jump back to loop label
+done:
+    li $v0, 10                  # exit program
+    syscall
