@@ -44,14 +44,18 @@ int main()
         t+=burst[i];
     }
     printf("\n");
-    printf("Process Id\tBurst Time\tWait Time\n");
+    printf("Process Id\tBurst Time\tWait Time\tTurnaroundtime\n");
     int wait_time=0;
+    int tat1=burst[0];
     int total_wait_time = 0;
     for(int i=0;i<n;i++)
     {
-        printf("P%d\t\t%d\t\t%d\n",index[i],burst[i],wait_time);
+    if(i!=0){tat1+=burst[i];}
+        printf("P%d\t\t%d\t\t%d\t\t%d\n",index[i],burst[i],wait_time,tat1);
         total_wait_time += wait_time;
         wait_time += burst[i];
+        
+        
     }
     
     float avg_wait_time = (float) total_wait_time / n;
