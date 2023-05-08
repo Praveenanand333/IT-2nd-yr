@@ -18,9 +18,9 @@ vector<int> bfs(const vector<vector<int>>& adj_list, int start, int target = -1)
 {  
     int n = adj_list.size();  
     vector<bool> visited(n, false);  // a boolean array to track visited vertices  
-    vector<int> order;  // a vector to store the BFS traversal order  
+    vector<int> order;  // a vector to store the BFS traversal order,contains explored verrtices  
   
-    queue<int> q;  // a queue to hold the vertices to be visited  
+    queue<int> q;  // a queue contains unexplored vertices
     q.push(start);  // add the starting vertex to the queue  
     visited[start] = true;  // mark the starting vertex as visited  
     while (!q.empty())  
