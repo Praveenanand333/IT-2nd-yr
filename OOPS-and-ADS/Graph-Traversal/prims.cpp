@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <functional>
+#include <climits>
 
 // Structure to represent an edge in the graph
 struct Edge {
@@ -27,47 +27,49 @@ void addEdge(std::vector<std::vector<Node>>& adjList, int src, int dest, int wei
 // Function to perform Prim's algorithm
 std::vector<Edge> primMST(std::vector<std::vector<Node>>& adjList, int V) {
     std::vector<bool> visited(V, false);  // To track visited vertices
-    std::priority_queue<Node, std::vector<Node>, std::greater<Node>> pq;  // Priority queue to select minimum-weight edges
-    std::vector<Edge> MST;  // Stores the resulting MST
+    std::vector<int> key(V, INT_MAX);  // Key values used to pick the minimum weight edge
+    std::vector<int> parent(V, -1);  // Store the MST
 
     // Start with vertex 0
     int startVertex = 0;
-    visited[startVertex] = true;
+    key[startVertex] = 0;
 
-    // Add all edges from vertex 0 to the priority queue
-    for (const auto& node : adjList[startVertex]) {
-        pq.push(node);
-    }
+    // Create a priority queue to select the minimum-weight edge
+    std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> pq;
 
-    // Loop until the priority queue is empty (all vertices are visited)
+    // Add the start vertex to the priority queue
+    pq.push(std::make_pair(0, startVertex));
+
+    // Loop until all vertices are included in the MST
     while (!pq.empty()) {
-        // Get the minimum-weight edge
-        Node minNode = pq.top();
+        int u = pq.top().second;
         pq.pop();
 
-        int src = minNode.vertex;
-        int weight = minNode.weight;
+        visited[u] = true;
 
-        // If the destination vertex is already visited, skip this edge
-        if (visited[src])
-            continue;
+        // Traverse all adjacent vertices of u
+        for (const auto& node : adjList[u]) {
+            int v = node.vertex;
+            int weight = node.weight;
 
-        // Mark the destination vertex as visited
-        visited[src] = true;
-
-        // Create an edge and add it to the MST
-        Edge edge;
-        edge.src = src;
-        edge.dest = minNode.vertex;
-        edge.weight = weight;
-        MST.push_back(edge);
-
-        // Add all edges from the destination vertex to the priority queue
-        for (const auto& node : adjList[src]) {
-            if (!visited[node.vertex]) {
-                pq.push(node);
+            // If v is not visited and the weight of the edge (u,v) is smaller than the current key of v,
+            // update the key value and parent of v
+            if (!visited[v] && weight < key[v]) {
+                key[v] = weight;
+                parent[v] = u;
+                pq.push(std::make_pair(key[v], v));
             }
         }
+    }
+
+    // Construct the MST from the parent array
+    std::vector<Edge> MST;
+    for (int i = 1; i < V; ++i) {
+        Edge edge;
+        edge.src = parent[i];
+        edge.dest = i;
+        edge.weight = key[i];
+        MST.push_back(edge);
     }
 
     return MST;
