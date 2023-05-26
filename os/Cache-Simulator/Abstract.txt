@@ -1,0 +1,18 @@
+Cache Simulator
+This Cache Simulator is a Python project designed to simulate the behavior of a cache memory system in computer architecture. 
+It provides a way to understand how data is stored, accessed, and manipulated in a cache, allowing users to experiment and analyze cache performance.
+
+Features
+The Cache Simulator includes the following features:
+
+Cache Configuration: The simulator supports various cache configurations, including cache size, block size, associativity, and replacement policy. 
+Users can customize these parameters to model different cache architectures.
+
+Memory Access: The simulator allows users to perform memory read and write operations. It simulates the cache hierarchy by checking if data is present in the cache or
+needs to be fetched from the main memory.
+
+Cache Statistics: The simulator collects statistics on cache hits, misses, and overall cache performance. It provides insights into cache behavior and efficiency, 
+helping users evaluate the effectiveness of different cache configurations and policies.
+
+Visualization: The simulator offers graphical representation and visualization of cache contents and access patterns. Users can visualize cache blocks, 
+memory addresses, and the flow of data within the cache.
