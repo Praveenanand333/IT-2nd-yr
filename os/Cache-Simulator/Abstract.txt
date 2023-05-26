@@ -16,3 +16,7 @@ helping users evaluate the effectiveness of different cache configurations and p
 
 Visualization: The simulator offers graphical representation and visualization of cache contents and access patterns. Users can visualize cache blocks, 
 memory addresses, and the flow of data within the cache.
+
+To run the program:
+Install python and then install tkinter module
+Run cache2.py
