@@ -1,4 +1,4 @@
-                                                         STUDENT DATABASE IMPLEMENTATION USING BTREE
+                                              STUDENT DATABASE IMPLEMENTATION USING BTREE
 
 Abstract:
 
