@@ -35,7 +35,7 @@ To run the programs in this repository, ensure that the following software is in
 
 - Mingw for c and c++
 - Any code editors like VScode,notepad++
-- Linux for runing os programs(you can have virtualboxx for running linux)
+- Linux for runing os programs(you can have virtualbox for running linux)
 
 
 
