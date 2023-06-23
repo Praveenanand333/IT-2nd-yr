@@ -44,7 +44,7 @@ To run the programs in this repository, ensure that the following software is in
 1. Clone the repository or download the source code:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Praveenanand333/IT-2nd-yr
    ```
 
 2. Navigate to the desired program folder:
